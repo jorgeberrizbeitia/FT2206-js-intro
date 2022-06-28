@@ -346,3 +346,155 @@ switch (apple) {
   default:
     console.log("tienes muchas Manzanas");
 }
+
+// THRUTHY Y FALSY
+
+// if (30 === 30) {
+//   console.log("Esto se verá en la consola");
+// }
+
+// if (30) {
+//   console.log("Esto se verá en la consola");
+// }
+
+if (0) {
+  console.log("Esto se verá en la consola");
+}
+
+if ("") {
+  console.log("Esto se verá en la consola");
+}
+
+if (0 || "" || false || undefined || NaN || null) {
+  console.log("Esto nunca se va a ver")
+}
+
+
+let fullName = "Caro";
+
+if (fullName) {
+  console.log(`hola ${fullName}`)
+} else {
+  console.log("Hola Extraño!")
+}
+
+
+let money = 10;
+
+if (money) {
+  console.log(`tienes ${money} Euros`)
+} else {
+  console.log("No tienes dinero! :(")
+}
+
+
+// FOR LOOP
+
+// for (initializacion; condicion; expresion final) {
+//   el codigo a ejecutar X cantidad de veces
+// }
+
+
+// let i = 0 // solo se ejecuta una vez. Variable Control
+for (let i = 0; i < 10; i++ ) {
+  // if (i < 10) entonces, sigue el bucle
+
+  // .todo mi codigo
+  console.log("bucle ejecutandose", i)
+
+  // i = i + 1
+}
+
+
+for (let i = 1; i < 10; i = i + 3) {
+  // if (i < 10) entonces, sigue el bucle
+
+  // .todo mi codigo
+  console.log("bucle ejecutandose", i)
+
+  // i = i + 3
+}
+
+// console.log(i)
+
+
+for (let i = 15; i > 1; i--) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("ApplePen")
+  } else if (i % 5 === 0) {
+    console.log("Apple")
+  } else if (i % 3 === 0) {
+    console.log("Pen")
+  } else {
+    console.log(i)
+  }
+}
+
+
+// UTILIZAR LOOPS CON VARIABLES EXTERNAS
+
+let lyrics = "Around the word, Around the word, Around the word, Around the word, Around the word, Around the word, Around the word, Around the word, Around the word, Around the word, Around the word, Around the word, Around the word, Around the word, Around the word, Around the word, Around the word, Around the word, Around the word, Around the word, Around the word, Around the word, Around the word, Around the word, "
+
+
+let counter = 0;
+
+for (let i = 0; i < lyrics.length; i++) {
+  // console.log(i)
+  // console.log( lyrics[i] )
+  if (lyrics[i] === "o") {
+    // console.log("he encontrado la letra o!")
+    counter++
+  }
+}
+
+for (let character of lyrics) {
+  if (character === "o") {
+    counter++
+  }
+}
+
+console.log(`encontradas ${counter} letras o`)
+
+
+
+// otro ejemplo
+
+let numStr = "423000430040X55003422";
+
+let newString = ""
+
+// 1. crear un nuevo string removiendo los numeros 0
+// 2. cuando llegue a la letra X, deje de agregar numeros
+
+for (let i = 0; i < numStr.length; i++) {
+
+  if (numStr[i] === "0") {
+    continue; // deten la iteracion actual del loop, y continua con la siguiente
+  } else if (numStr[i] === "X") {
+    break; // deten el bucle/loop
+  }
+
+  newString = newString + numStr[i]
+}
+
+console.log(newString)
+
+
+// for in // for of
+
+
+let stringToLoop = "Hola";
+
+for (let i in stringToLoop) {
+  // este bucle SIEMPRE itera por cada uno de los caracteres del elemento
+  console.log(i)
+  console.log(stringToLoop[i])
+}
+
+for (let character of stringToLoop) {
+  // este bucle SIEMPRE itera por cada uno de los caracteres del elemento
+  console.log(character)
+}
+
+
+
